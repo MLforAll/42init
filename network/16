@@ -1,0 +1,18 @@
+Pour faire pointer 46.19.122.85 sur ce poste, on modifie le fichier /etc/hosts.
+
+Avant modification:
+
+$> cat /etc/hosts
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+$>
+
+Apres modification:
+
+$> cat /etc/hosts
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+46.19.122.85	intra.42.fr
+$>
