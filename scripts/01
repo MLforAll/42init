@@ -1,2 +1,4 @@
 #!/bin/sh
-cat /etc/passwd | awk 'BEGIN {FS=":"} {print $1, $3, $6}'
+printf "login\tuid\tpath\n"
+printf "======================\n"
+cat /etc/passwd | grep -v '^#' | awk 'BEGIN {FS=":"} {print $1"\t"$3"\t"$6}'
