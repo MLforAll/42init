@@ -1,4 +1,4 @@
 #!/bin/sh
 logf=/var/log/update_script.log
 apt-get update > $logf
-apt-get upgrade >> $logf
+apt-get upgrade -y >> $logf
