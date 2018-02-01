@@ -1,4 +1,17 @@
 #!/bin/sh
-printf "login\tuid\tpath\n"
-printf "======================\n"
-cat /etc/passwd | grep -v '^#' | awk 'BEGIN {FS=":"} {print $1"\t"$3"\t"$6}'
+printf "login                    uid\tpath\n"
+printf "===============================================\n"
+while read line
+do
+	if [ -z "$(echo "$line" | grep '^#')" ]; then
+		first=$(echo "$line" | awk 'BEGIN {FS=":"} {print $1}')
+		printf "$first"
+		for n in $(seq $(( 25 - $(printf "$first" | wc -m) )))
+		do
+			printf " "
+		done
+		echo "$line" | awk 'BEGIN {FS=":"} {print $3"\t"$6}'
+	fi
+done < /etc/passwd
+
+#cat /etc/passwd | grep -v '^#' | awk 'BEGIN {FS=":"} {print $1"\t"$3"\t"$6}'

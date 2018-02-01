@@ -1,7 +1,5 @@
 network:
-04
-06
-10
+05
 11
 13
 
@@ -9,6 +7,4 @@ system:
 OK
 
 scripts:
-03
-04
-05
+OK

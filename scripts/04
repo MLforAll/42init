@@ -1,0 +1,18 @@
+#!/bin/sh
+
+md5file="/var/log/crontab_md5.txt"
+md5tmp="/tmp/crontab_md5_tmp.txt"
+filetc="/etc/crontab"
+
+[ ! -f "$md5file" ] && md5sum "$filetc" > "$md5file"
+[ -f "$md5tmp" ] && rm "$md5tmp"
+md5sum "$filetc" > "$md5tmp"
+
+if [ ! -z "$(diff "$md5file" "$md5tmp")" ]; then
+	echo "$filetc has changed!" | mail -s "$filetc notification" root
+else
+	rm "$md5file"
+	mv "$md5tmp" "$md5file"
+fi
+
+rm "$md5tmp"
