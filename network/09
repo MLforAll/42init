@@ -1,1 +1,10 @@
-Il n'y a que 2 addresses retournee.
+PING 42.fr (10.52.1.11): 56 data bytes
+64 bytes from 10.52.1.11: icmp_seq=0 ttl=63 time=0.302 ms
+64 bytes from 10.52.1.11: icmp_seq=1 ttl=63 time=0.345 ms
+64 bytes from 10.52.1.11: icmp_seq=2 ttl=63 time=0.440 ms
+64 bytes from 10.52.1.11: icmp_seq=3 ttl=63 time=0.394 ms
+64 bytes from 10.52.1.11: icmp_seq=4 ttl=63 time=0.394 ms
+
+--- 42.fr ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.302/0.375/0.440/0.047 ms
