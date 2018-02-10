@@ -1,8 +1,6 @@
 On utilise la commande:
-$> whois slash16.org
 
-La sortie est la suivante:
--------------------------
+$> whois slash16.org
 Domain Name: SLASH16.ORG
 Registry Domain ID: D171286063-LROR
 Registrar WHOIS Server: whois.bookmyname.com
@@ -67,9 +65,6 @@ URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
 For more information on Whois status codes, please visit https://icann.org/epp
 
 Access to Public Interest Registry WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the Public Interest Registry registry database. The data in this record is provided by Public Interest Registry for informational purposes only, and Public Interest Registry does not guarantee its accuracy. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to: (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Afilias except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. Public Interest Registry reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.
--------------------------
+$>
 
-Parmis les informations, le champ "Tech Organization: ONLINE" nous permet le nom de l'hebergeur.
-Une recherche Google afirme cela, et on apprend aussi que ONLINE propose des noms de domaines sous
-differentes marques, ce qui explique la presence de "bookmyname" dans les champs commencants
-par "Registrator".
+On peut voir qu'il s'agit d'Amazon (AWS), via les champs "Name Server:"

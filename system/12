@@ -1,1 +1,1 @@
-du /var
+du -d1 -B1 /var
