@@ -2,7 +2,7 @@
 
 # HOWTO: ADD THE SCRIPT TO CRON
 # 1. cp the script somewhere
-# 2. append "0 0 * * * path" to crontab
+# 2. append "0 0 * * * root path" to crontab
 #
 # This script does this if given cron as first argument
 
@@ -13,7 +13,7 @@ fi
 
 if [ "$1" = "cron" ]; then
 	cp -p "$0" /usr/local/bin/chkcrontab.sh
-	echo "0 0 * * * /usr/local/bin/chkcrontab.sh" >> /etc/crontab
+	echo "0 0 * * * root /usr/local/bin/chkcrontab.sh" >> /etc/crontab
 	echo "con job added!"
 	exit 0
 fi
