@@ -1,1 +1,1 @@
-networksetup -getinfo Wi-Fi | grep 'Wi-Fi ID'
+ifconfig en1 ether | awk '/ether/ {print $2}'

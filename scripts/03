@@ -1,4 +1,2 @@
 #!/bin/sh
-chk_dir="."
-[ ! -z "$1" ] && chk_dir="$1"
-ls -1S "$chk_dir"
+ls -1S "$1"

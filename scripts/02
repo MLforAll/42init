@@ -1,4 +1,27 @@
 #!/bin/sh
+
+# HOWTO: ADD THE SCRIPT TO CRON
+# 1. cp the script somewhere
+# 2. append "0 4 * * 1 path" to crontab
+#
+# This script does this if given cron as first argument
+
+if [  $(id -u) -ne 0 ]; then
+	echo "This script must be ran as root!"
+	exit 1
+fi
+
+if [ "$1" = "cron" ]; then
+	if [ -z "$(grep / "$0")" ]; then
+		path="$PWD/$0"
+	else
+		path="$0"
+	fi
+	cp -p "$path" /usr/local/bin/updpkgs.sh
+	echo "0 4 * * 1 /usr/local/bin/updpkgs.sh >> /etc/crontab
+fi
+
 logf=/var/log/update_script.log
-apt-get update > $logf 2>&1
-apt-get upgrade -y >> $logf 2>&1
+echo "Updating, $(date)"
+apt-get update &> $logf
+apt-get upgrade -y &>> $logf

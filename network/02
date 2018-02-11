@@ -1,1 +1,1 @@
-networksetup -getinfo Ethernet | grep 'Ethernet Address'
+ifconfig en0 inet | awk '/inet/ {print $2}'
