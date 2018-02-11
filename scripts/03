@@ -1,2 +1,4 @@
 #!/bin/sh
-ls -1S "$1"
+startdir="."
+[ ! -z "$1" ] && startdir="$1"
+ls -1S "$startdir"
