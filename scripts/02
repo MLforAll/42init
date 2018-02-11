@@ -18,10 +18,12 @@ if [ "$1" = "cron" ]; then
 		path="$0"
 	fi
 	cp -p "$path" /usr/local/bin/updpkgs.sh
-	echo "0 4 * * 1 /usr/local/bin/updpkgs.sh >> /etc/crontab
+	echo "0 4 * * 1 /usr/local/bin/updpkgs.sh" >> /etc/crontab
+	echo "con job added!"
+	exit 0
 fi
 
 logf=/var/log/update_script.log
-echo "Updating, $(date)"
-apt-get update &> $logf
-apt-get upgrade -y &>> $logf
+echo "Updating, $(date)" > $logf
+apt-get update >> $logf 2>&1
+apt-get upgrade -y >> $logf 2>&1
