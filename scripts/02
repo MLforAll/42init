@@ -12,12 +12,7 @@ if [  $(id -u) -ne 0 ]; then
 fi
 
 if [ "$1" = "cron" ]; then
-	if [ -z "$(grep / "$0")" ]; then
-		path="$PWD/$0"
-	else
-		path="$0"
-	fi
-	cp -p "$path" /usr/local/bin/updpkgs.sh
+	cp -p "$0" /usr/local/bin/updpkgs.sh
 	echo "0 4 * * 1 /usr/local/bin/updpkgs.sh" >> /etc/crontab
 	echo "con job added!"
 	exit 0
